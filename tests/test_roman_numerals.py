@@ -15,6 +15,9 @@ def test_10():
 def test_400():
     assert get_roman_numeral(400) == "CD"
 
+def test_666():
+    assert get_roman_numeral(666) == "DCLXVI"
+
 def test_999():
     assert get_roman_numeral(999) == "CMXCIX"
 
