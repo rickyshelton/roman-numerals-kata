@@ -12,6 +12,12 @@ def test_5():
 def test_10():
     assert get_roman_numeral(10) == "X"
 
+def test_400():
+    assert get_roman_numeral(400) == "CD"
+
+def test_999():
+    assert get_roman_numeral(999) == "CMXCIX"
+
 def test_1000():
     assert get_roman_numeral(1000) == "M"
 
@@ -26,3 +32,6 @@ def test_9():
 
 def test_322():
     assert get_roman_numeral(322) == "CCCXXII"
+
+def test_10000():
+    assert get_roman_numeral(10000) == "MMMMMMMMMM"
