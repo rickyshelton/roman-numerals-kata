@@ -15,5 +15,8 @@ def test_10():
 def test_1000():
     assert get_roman_numeral(1000) == "M"
 
+def test_2000():
+    assert get_roman_numeral(2000) == "MM"
+
 def test_9():
     assert get_roman_numeral(9) == "IX"
