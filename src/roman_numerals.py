@@ -6,8 +6,9 @@ def get_roman_numeral(num):
     result = ""
     base = 1
 
-    for i in reversed(get_hundreds(num_string)):
-        result = get_numeral_for_base(int(i), base).symbol + result
+    for digit in reversed(get_hundreds(num_string)):
+        numeral = get_numeral_for_base(int(digit), base)
+        result = numeral.symbol + result
         base = base * 10
     
     thousands = get_thousands(num_string)
