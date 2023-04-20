@@ -52,15 +52,13 @@ HUNDREDS = [
 ]
 
 
-def get_numeral_for_base(
-    number: Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], base: Literal[1, 10, 100]
+def get_numeral_for_power(
+    number: Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], power: Literal[1, 10, 100]
 ) -> RomanNumeral:
-    index_for_base = int(math.log10(base)) * 2
-
-    return get_list_for_base(base)[number]
+    return get_list_for_power(power)[number]
 
 
-def get_list_for_base(base: Literal[1, 10, 100]) -> list[RomanNumeral]:
+def get_list_for_power(base: Literal[1, 10, 100]) -> list[RomanNumeral]:
     if base == 1:
         return UNITS
 
@@ -71,5 +69,5 @@ def get_list_for_base(base: Literal[1, 10, 100]) -> list[RomanNumeral]:
         return HUNDREDS
 
 
-def get_numeral_for_base_1000(number) -> RomanNumeral:
+def get_numeral_for_thousands(number) -> RomanNumeral:
     return RomanNumeral(number * 1000, number * M.symbol)
