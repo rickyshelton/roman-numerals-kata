@@ -1,4 +1,4 @@
-from constants import get_numeral_for_power, get_numeral_for_thousands, RomanNumeral
+from constants import get_numeral_for_power, get_numeral_for_thousands
 
 
 def get_roman_numeral(num):
