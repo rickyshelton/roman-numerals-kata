@@ -14,7 +14,8 @@ def get_roman_numeral(num):
     thousands = get_thousands(num_string)
 
     if thousands:
-        result = get_numeral_for_thousands(int(thousands)).symbol + result
+        numeral = get_numeral_for_thousands(int(thousands)).symbol
+        result = numeral + result
 
     return result
 
