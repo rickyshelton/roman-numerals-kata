@@ -1,7 +1,7 @@
 from constants import get_numeral_for_power, get_numeral_for_thousands
 
 
-def get_roman_numeral(num):
+def get_roman_numeral(num: int) -> str:
     num_string = str(num)
     result = ""
     hundreds_digits_reversed = reversed(get_hundreds(num_string))
