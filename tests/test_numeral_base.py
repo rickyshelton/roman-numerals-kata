@@ -4,7 +4,6 @@ from constants import (
     UNITS,
     TENS,
     HUNDREDS,
-    RomanNumeral,
 )
 
 
@@ -25,4 +24,4 @@ def test_300():
 
 
 def test_3000():
-    assert get_numeral_for_thousands(3) == RomanNumeral(3000, "MMM")
+    assert get_numeral_for_thousands(3) == "MMM"

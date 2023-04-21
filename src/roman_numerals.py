@@ -8,12 +8,12 @@ def get_roman_numeral(num: int) -> str:
 
     for power, digit in enumerate(hundreds_digits_reversed):
         numeral = get_numeral_for_power(int(digit), power)
-        result = numeral.symbol + result
+        result = numeral + result
 
     thousands = get_thousands(num_string)
 
     if thousands:
-        numeral = get_numeral_for_thousands(int(thousands)).symbol
+        numeral = get_numeral_for_thousands(int(thousands))
         result = numeral + result
 
     return result
