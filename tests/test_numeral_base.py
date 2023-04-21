@@ -8,21 +8,21 @@ from constants import (
 )
 
 
-def test_base_1_5():
+def test_5():
     assert get_numeral_for_power(5, 0) == UNITS[5]
 
 
-def test_base_1_3():
+def test_3():
     assert get_numeral_for_power(3, 0) == UNITS[3]
 
 
-def test_base_10_3():
+def test_30():
     assert get_numeral_for_power(3, 1) == TENS[3]
 
 
-def test_base_100_3():
+def test_300():
     assert get_numeral_for_power(3, 2) == HUNDREDS[3]
 
 
-def test_base_1000_3():
+def test_3000():
     assert get_numeral_for_thousands(3) == RomanNumeral(3000, "MMM")
