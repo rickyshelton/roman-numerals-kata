@@ -4,12 +4,11 @@ from constants import get_numeral_for_power, get_numeral_for_thousands
 def get_roman_numeral(num):
     num_string = str(num)
     result = ""
-    base = 1
+    hundreds_digits_reversed = reversed(get_hundreds(num_string))
 
-    for digit in reversed(get_hundreds(num_string)):
-        numeral = get_numeral_for_power(int(digit), base)
+    for power, digit in enumerate(hundreds_digits_reversed):
+        numeral = get_numeral_for_power(int(digit), power)
         result = numeral.symbol + result
-        base = base * 10
 
     thousands = get_thousands(num_string)
 
@@ -20,9 +19,9 @@ def get_roman_numeral(num):
     return result
 
 
-def get_hundreds(num_string):
+def get_hundreds(num_string: str) -> str:
     return num_string[-3:]
 
 
-def get_thousands(num_string):
+def get_thousands(num_string: str) -> str:
     return num_string[0:-3]

@@ -8,6 +8,9 @@ class RomanNumeral:
     symbol: str
 
 
+SingleDigit = Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+PowersOfTen = Literal[0, 1, 2]
+
 ZERO = RomanNumeral(0, "")
 M = RomanNumeral(1000, "M")
 
@@ -51,22 +54,20 @@ HUNDREDS = [
 ]
 
 
-def get_numeral_for_power(
-    number: Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], power: Literal[1, 10, 100]
-) -> RomanNumeral:
+def get_numeral_for_power(number: SingleDigit, power: PowersOfTen) -> RomanNumeral:
     return get_list_for_power(power)[number]
 
 
-def get_list_for_power(base: Literal[1, 10, 100]) -> list[RomanNumeral]:
-    if base == 1:
+def get_list_for_power(power: PowersOfTen) -> list[RomanNumeral]:
+    if power == 0:
         return UNITS
 
-    if base == 10:
+    if power == 1:
         return TENS
 
-    if base == 100:
+    if power == 2:
         return HUNDREDS
 
 
-def get_numeral_for_thousands(number) -> RomanNumeral:
-    return RomanNumeral(number * 1000, number * M.symbol)
+def get_numeral_for_thousands(thousands: int) -> RomanNumeral:
+    return RomanNumeral(thousands * 1000, thousands * M.symbol)
