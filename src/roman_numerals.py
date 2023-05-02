@@ -1,4 +1,4 @@
-from constants import get_numeral_for_power, get_numeral_for_thousands
+from constants import get_numeral_for_power_of_ten, get_numeral_for_thousands
 
 
 def get_roman_numeral(num: int) -> str:
@@ -7,7 +7,7 @@ def get_roman_numeral(num: int) -> str:
     hundreds_digits_reversed = reversed(get_hundreds(num_string))
 
     for power, digit in enumerate(hundreds_digits_reversed):
-        numeral = get_numeral_for_power(int(digit), power)
+        numeral = get_numeral_for_power_of_ten(int(digit), power)
         result = numeral + result
 
     thousands = get_thousands(num_string)

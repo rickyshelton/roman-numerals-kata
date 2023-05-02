@@ -1,5 +1,5 @@
 from constants import (
-    get_numeral_for_power,
+    get_numeral_for_power_of_ten,
     get_numeral_for_thousands,
     UNITS,
     TENS,
@@ -8,19 +8,19 @@ from constants import (
 
 
 def test_5():
-    assert get_numeral_for_power(5, 0) == UNITS[5]
+    assert get_numeral_for_power_of_ten(5, 0) == UNITS[5]
 
 
 def test_3():
-    assert get_numeral_for_power(3, 0) == UNITS[3]
+    assert get_numeral_for_power_of_ten(3, 0) == UNITS[3]
 
 
 def test_30():
-    assert get_numeral_for_power(3, 1) == TENS[3]
+    assert get_numeral_for_power_of_ten(3, 1) == TENS[3]
 
 
 def test_300():
-    assert get_numeral_for_power(3, 2) == HUNDREDS[3]
+    assert get_numeral_for_power_of_ten(3, 2) == HUNDREDS[3]
 
 
 def test_3000():

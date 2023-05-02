@@ -47,11 +47,11 @@ HUNDREDS = [
 ]
 
 
-def get_numeral_for_power(number: SingleDigit, power: PowersOfTen) -> str:
-    return get_list_for_power(power)[number]
+def get_numeral_for_power_of_ten(number: SingleDigit, power: PowersOfTen) -> str:
+    return get_list_for_power_of_ten(power)[number]
 
 
-def get_list_for_power(power: PowersOfTen) -> list[str]:
+def get_list_for_power_of_ten(power: PowersOfTen) -> list[str]:
     if power == 0:
         return UNITS
 
